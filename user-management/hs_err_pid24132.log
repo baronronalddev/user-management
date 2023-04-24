@@ -1,0 +1,199 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 400556032 bytes for Failed to commit area from 0x0000000683e00000 to 0x000000069bc00000 of length 400556032.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3386), pid=24132, tid=24204
+#
+# JRE version:  (11.0.16.1+1) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.16.1+1, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51592 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=user-management -Dfile.encoding=UTF-8 com.nisum.ms.usermanagement.UserManagementApplication
+
+Host: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz, 8 cores, 23G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2788)
+Time: Mon Apr 24 12:46:35 2023 Hora est. Pacífico, Sudamérica elapsed time: 0.038368 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001a2d1681000):  JavaThread "Unknown thread" [_thread_in_vm, id=24204, stack(0x000000514b500000,0x000000514b600000)]
+
+Stack: [0x000000514b500000,0x000000514b600000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x61f18a]
+V  [jvm.dll+0x7abb09]
+V  [jvm.dll+0x7ad1f8]
+V  [jvm.dll+0x7ad8d3]
+V  [jvm.dll+0x24fc38]
+V  [jvm.dll+0x61c49a]
+V  [jvm.dll+0x610c45]
+V  [jvm.dll+0x307b5c]
+V  [jvm.dll+0x3079e2]
+V  [jvm.dll+0x30c6f6]
+V  [jvm.dll+0x352b4f]
+V  [jvm.dll+0x352580]
+V  [jvm.dll+0x2e4b58]
+V  [jvm.dll+0x2e5cb6]
+V  [jvm.dll+0x785957]
+V  [jvm.dll+0x7870df]
+V  [jvm.dll+0x35f899]
+V  [jvm.dll+0x7688c0]
+V  [jvm.dll+0x3cd3bf]
+V  [jvm.dll+0x3cf751]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17604]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001a2cf3f27d0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001a2d169b800 GCTaskThread "GC Thread#0" [stack: 0x000000514b600000,0x000000514b700000] [id=8156]
+  0x000001a2d1722800 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000514b700000,0x000000514b800000] [id=26520]
+  0x000001a2d1725000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000514b800000,0x000000514b900000] [id=28932]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffad57c4327]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001a2d167cfc0] Heap_lock - owner thread: 0x000001a2d1681000
+
+Heap address: 0x0000000683e00000, size: 6082 MB, Compressed Oops mode: Non-zero based: 0x0000000683e00000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.026 Loaded shared library D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff7b9490000 - 0x00007ff7b949d000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\javaw.exe
+0x00007ffb7c130000 - 0x00007ffb7c328000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffb7a8a0000 - 0x00007ffb7a95f000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffb79810000 - 0x00007ffb79aea000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffb79f90000 - 0x00007ffb7a090000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffb74190000 - 0x00007ffb741a5000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\VCRUNTIME140.dll
+0x00007ffb614b0000 - 0x00007ffb614c7000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\jli.dll
+0x00007ffb7aad0000 - 0x00007ffb7ac6d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffb79d90000 - 0x00007ffb79db2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffb7bc50000 - 0x00007ffb7bc7b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffb79b80000 - 0x00007ffb79c90000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffb7a0c0000 - 0x00007ffb7a15d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffb631b0000 - 0x00007ffb6344a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffb7b5e0000 - 0x00007ffb7b67e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffb7b5b0000 - 0x00007ffb7b5e0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffb5eae0000 - 0x00007ffb5eb7b000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\msvcp140.dll
+0x00007ffad54d0000 - 0x00007ffad6052000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\server\jvm.dll
+0x00007ffb7a7f0000 - 0x00007ffb7a89e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffb7be90000 - 0x00007ffb7bf2c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffb7bf30000 - 0x00007ffb7c056000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffb7aac0000 - 0x00007ffb7aac8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffb6f340000 - 0x00007ffb6f34a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffb58780000 - 0x00007ffb58789000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffb7b540000 - 0x00007ffb7b5ab000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffb5ff50000 - 0x00007ffb5ff77000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffb77fa0000 - 0x00007ffb77fb2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffb3ce60000 - 0x00007ffb3ce70000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\verify.dll
+0x00007ffb775d0000 - 0x00007ffb777b4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffb5dc90000 - 0x00007ffb5dcc4000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffb79af0000 - 0x00007ffb79b72000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffb741f0000 - 0x00007ffb74218000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\java.dll
+0x00007ffb74160000 - 0x00007ffb7416a000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\jimage.dll
+0x00007ffb61390000 - 0x00007ffb613a8000 	D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;D:\Users\IR70012821\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51592 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=user-management -Dfile.encoding=UTF-8 
+java_command: com.nisum.ms.usermanagement.UserManagementApplication
+java_class_path (initial): D:\reto\user-management\target\classes;D:\Users\IR70012821\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.1\jackson-annotations-2.13.1.jar;D:\Users\IR70012821\.m2\repository\io\springfox\springfox-swagger2\2.9.2\springfox-swagger2-2.9.2.jar;D:\Users\IR70012821\.m2\repository\io\springfox\springfox-spring-web\2.9.2\springfox-spring-web-2.9.2.jar;D:\Users\IR70012821\.m2\repository\io\springfox\springfox-core\2.9.2\springfox-core-2.9.2.jar;D:\Users\IR70012821\.m2\repository\io\springfox\springfox-spi\2.9.2\springfox-spi-2.9.2.jar;D:\Users\IR70012821\.m2\repository\io\swagger\swagger-annotations\1.5.20\swagger-annotations-1.5.20.jar;D:\Users\IR70012821\.m2\repository\org\springframework\data\spring-data-relational\2.1.0\spring-data-relational-2.1.0.jar;D:\Users\IR70012821\.m2\repository\org\springframework\data\spring-data-commons\2.6.0\spring-data-commons-2.6.0.jar;D:\Users\IR70012821\.m2\repository\org\springframework\spring-tx\5.3.14\spring-tx-5.3.14.jar;D:\Users\IR70012821\.m2\repository\org\springframework\spring-context\5.3.14\spring-context-5.3.14.jar;D:\Users\IR70012821\.m2\repository\org\springframework\spring-expression\5.3.14\spring-expression-5.3.14.jar;D:\Users\IR70012821\.m2\repository\org\springframework\spring-beans\5.3.14\spring-beans-5.3.14.jar;D:\Users\IR70012821\.m2\repository\org\springframework\spring-core\5.3.14\spring-core-5.3.14.jar;D:\Users\IR70012821\.m2\repository\org\springframework\spring-jcl\5.3.14\spring-jcl-5.3.14.jar;D:\Users\IR70012821\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;D:\Users\IR70012821\.m2\repository\io\swagger\swagger-models\1.5.20\swagger-models-1.5.20.jar;D:\Users\IR70012821\.m2\repository\io\springfox\springfox-schema\2.9.2\springfox-schema-2.9.2.jar;D:\Users\IR70012821\.m2\repository\io\springfox\springfox-swagger-common\2.9.2\springfox-swagger-common-2.9.2.jar;D:\Users\IR70012821\.m2\repository\com\google\guava\guava\20.0\guava-20.0.jar;D:\Users\IR70
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 400556032                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 6377439232                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7549744                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 244108496                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.16
+PATH=D:/Users/IR70012821/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116/jre/bin/server;D:/Users/IR70012821/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.16.v20220903-1116/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Oracle11\product\11.2.0\client_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\GuptaTD62;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.8.6\bin;C:\Program Files\Java\jdk-11.0.16\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Users\IR70012821\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\;D:\Users\IR70012821\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin;;D:\Users\IR70012821\AppData\Local\Programs\Microsoft VS Code\bin;D:\Users\IR70012821\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-11.0.16\bin;D:\Users\IR70012821\AppData\Roaming\npm;C:\WINDOWS\system32;
+USERNAME=IR70012821
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+TMP=D:\Users\IR7001~1\AppData\Local\Temp
+TEMP=D:\Users\IR7001~1\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.2788)
+OS uptime: 1 days 0:59 hours
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0xec, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 24326M (4455M free)
+TotalPageFile size 30920M (AvailPageFile size 180M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 58M, peak: 440M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.16.1+1) for windows-amd64 JRE (11.0.16.1+1), built on Aug 16 2022 02:58:04 by "" with MS VC++ 15.9 (VS2017)
+
+END.
