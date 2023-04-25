@@ -69,7 +69,7 @@ Para ello obetner el token del servicio de api token  :
 
 CASO 2:  CASO EXITOSO  201 - CREATED
 
-![](docs/create_user_register_token.png)
+![](docs/created_user_register_ok.png)
 
 y está se registrará en la tb user_nisum :
 
